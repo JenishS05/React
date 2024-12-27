@@ -1,0 +1,405 @@
+body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap");
+
+* {
+  font-family: "Heebo", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+:root {
+  --orange: #df9245;
+  --liner2: #f2295b;
+  --white: #fff;
+  --black: black;
+  --color: #4c7687;
+  --dark-white: #c6c6c6;
+  --bubble-text1: #f4d5c5;
+  --bubble-text2: #f6dcd4;
+  --icon-clod: #dd4454;
+  --dys-color: #34495e;
+  --btn-color: #042f42;
+  --btn-1-color: #aaa;
+  --our-project-color: rgba(0, 0, 0, 0);
+  --white-flash-color: rgba(255, 255, 255, 0.5);
+  --explosion-btn-hover: rgba(255, 60, 60, 0.9);
+  --our-project-back-color: #21566a;
+  --link-icon: #09445a;
+  --faq-information: #f2f5f7;
+  --faq-font-color: #285b6f;
+  --our-team-hr: #e2707c;
+  --our-team-text: #a6a7a7;
+  --spared-world: #09445a;
+  --spared-color: #b2b2b2;
+  --spared-text: #04303e;
+  --card: #212529bf;
+}
+
+/* navbar start */
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: #000; */
+}
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background: transparent;
+  color: var(--white);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  position: sticky;
+  /* background-color: #000; */
+}
+header.navbar {
+  position: absolute;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  height: 65px;
+  width: 65px;
+}
+.logo span {
+  font-size: 25px;
+  font-weight: bold;
+}
+.logo p {
+  font-size: 0.8rem;
+  color: var(--white);
+}
+/* Menu */
+.menu {
+  display: flex;
+}
+.menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.menu ul li {
+  text-transform: uppercase;
+  position: relative;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  padding-bottom: 7px;
+}
+/* Dropdown Styles */
+.menu ul li ul {
+  display: none;
+  position: absolute;
+  background-color: var(--white);
+  list-style: none;
+  padding: 10px;
+  top: 178%;
+  left: 0;
+  z-index: 999;
+  width: 211px;
+}
+@media (min-width: 900px) and (max-width:2000px) {
+.menu ul li {
+  
+padding-bottom: 10px;}
+}
+.menu ul li:hover > ul {
+  display: block;
+}
+.fa-solid.fa-greater-than {
+  font-size: 12px;
+}
+.menu ul li ul li {
+  padding: 10px 20px;
+}
+.menu ul li ul li a {
+  color: var(--btn-color) !important;
+  font-size: 0.8rem;
+}
+.menu ul li ul li a:hover {
+  color: var(--icon-clod);
+}
+/* Contact Menu */
+.contact-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.phone-number {
+  font-size: 1rem;
+  font-weight: bold;
+}
+/* Hamburger Menu */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+/* Active State for X Icon */
+.hamburger-menu.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+  }
+  .menu ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+/* Hover Effect for X Icon */
+.hamburger-menu:hover span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger-menu:hover span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu:hover span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.hover-underline {
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+}
+.hover-underline::after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--white);
+  transform: scaleX(0);
+  transition: 1.5s;
+}
+.hover-underline:hover::after {
+  transform: scaleX(1);
+}
+.offcanvas-backdrop.show {
+  opacity: 0 !important;
+}
+.offcanvas.offcanvas-end {
+  background-color: var(--spared-world);
+}
+
+.offcanvas-body {
+  color: var(--white);
+}
+.offcanvas-body {
+  margin: 39px;
+}
+.slider-confect {
+  margin-top: 30px;
+}
+
+.slider-mailbox > .searcher > input#inputPassword {
+  border: none;
+  width: 100%;
+  background-color: var(--spared-world);
+}
+
+.searcher > input#slider {
+  background-color: var(--spared-world);
+}
+
+.slider-panel-icon a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--white); 
+  color: var(--black);
+  margin: 5px;
+  overflow: hidden; 
+}
+
+.slider-panel-icon>a>i.fa-brands.fa-x-twitter:hover{
+  color:var(--liner2);
+}
+.slider-panel-icon>a>i.fa-brands.fa-facebook-f:hover{
+  color:var(--liner2);
+
+}
+.slider-panel-icon>a>i.bi-instagram:hover{
+  color:var(--liner2);
+
+}
+.slider-panel-icon>a>i.fa-brands.fa-linkedin-in:hover{
+  color:var(--liner2);
+
+}
+
+
+
+
+
+.slider-panel-icon i {
+  font-size: 16px; 
+}
+
+
+.slider-panel-icon {
+  margin-top: 10px;
+}
+
+
+.menu ul li:hover > ul {
+  display: block;
+}
+
+.menu ul li ul li {
+  padding: 10px 20px;
+}
+
+.menu ul li ul li a {
+  color: var(--btn-color);
+  font-size: 0.8rem;
+}
+
+
+.menu ul li:hover > ul,
+.menu ul li ul:hover {
+  display: block;
+  opacity: 1; 
+  transform: translateY(0); 
+  pointer-events: auto; 
+}
+
+
+.menu ul li ul {
+  transition: all 0.3s ease-in-out;
+  display: block;
+  position: absolute;
+  background-color: var(--white);
+  list-style: none;
+  padding: 10px;
+  top: 100%; 
+  left: 0;
+  z-index: 999;
+  width: 211px;
+  opacity: 0;
+  transform: translateY(-10px); 
+  transition: opacity 0.5s ease, transform 0.5s ease; 
+  pointer-events: none; 
+}
+
+.navbar-okta:hover {
+  color:var(--liner2);
+}
+span.phone-number-slider:hover {
+  color:var(--liner2);
+
+}
+
+
+
+
+
+/* navbar end */
+
+
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.hover-underline {
+  text-decoration: none;
+  position: relative;
+}
+
+.hover-underline:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000; /* Customize */
+  bottom: -2px;
+  left: 0;
+}
+
+.divider {
+  border-bottom: 1px solid #e7e8e9;
+  margin: 5px 0;
+}
+
+
+
+.hamburger-menu span {
+  display: block;
+  background: #000; /* Customize */
+  height: 2px;
+  width: 25px;
+  margin: 5px 0;
+}
+
+/* Add more specific styles as needed */
